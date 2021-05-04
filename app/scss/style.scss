@@ -2,8 +2,10 @@
 @import 'fonts';
 @import 'libs/reset';
 @import 'global';
-@import 'libs/slick';
+// @import 'libs/slick';
 @import 'libs/libs';
+@import 'sprite';
+
 
 // main style
 .header {
@@ -12,6 +14,11 @@
   height: 120px;
   font-weight: 700;
   background-color: $header;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 
   @include a($screen-m) {
     height: auto;
@@ -30,7 +37,6 @@
     position: relative;
     color: #ffffff;
 
-
     @include a($screen-m) {
       padding: 0 15px;
       width: 100%;
@@ -39,6 +45,7 @@
 
     @include a($screen-xs) {
       justify-content: space-between;
+      height: 50px;
     }
 
     &::before {
@@ -147,7 +154,7 @@
 }
 
 .hero {
-  padding: 7vw 0 50px;
+  padding: calc(7vw + 120px) 0 50px;
   min-height: calc(100vh - 120px);
   background-image: url(../images/hero-bg.png);
   background-repeat: no-repeat;
@@ -158,8 +165,12 @@
     min-height: fit-content;
   }
 
+  @include a($screen-m) {
+    padding: 120px 0 20px;
+  }
+
   @include a($screen-xs) {
-    padding: 50px 0 20px;
+    padding: 90px 0 20px;
   }
 
   &__inner {
@@ -286,12 +297,12 @@
     flex-shrink: 0;
     width: 40vw;
     height: 30vw;
-    background-image: url(../images/hero-img.jpg);
+    background-image: url(../images/hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
-    border-radius: 40px;
+    // border-radius: 40px;
 
     @include a($screen-s) {
       margin-bottom: 30px;
@@ -304,12 +315,12 @@
     &::before {
       content: '';
       position: absolute;
-      top: 0;
+      top: 50%;
       // bottom: -1px;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 101%;
+      left: 50%;
+      width: 105%;
+      height: 106%;
+      transform: translate(-50%, -50%);
       background-image: url(../images/tablet.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -474,8 +485,6 @@
       border: 2px solid $hero;
       border-radius: 50%;
     }
-
-
   }
 
   &__heading {
@@ -554,13 +563,30 @@
   &__table-inner {
     padding: 85px 0;
     background-color: $secondary;
+
+    @include a($screen-s) {
+      padding: 40px 0;
+    }
+
+    @include a($screen-xs) {
+      padding: 30px 0;
+    }
   }
 
   &__table-title {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 1.25rem;
     font-weight: 500;
     font-size: 40px;
+
+    @include a($screen-s) {
+      font-size: 30px;
+    }
+
+    @include a($screen-xs) {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
   }
 
   &__table {
@@ -571,19 +597,29 @@
     // position: relative;
     display: grid;
     grid-template-columns:
-      [column-1] minmax(33.333%, 480px)  [column-2] minmax(200px, 1fr) [column-3] minmax(200px, 1fr);
+      [column-1] minmax(33.333%, 480px) [column-2] minmax(200px, 1fr) [column-3] minmax(200px, 1fr);
     grid-template-rows:
-      [columns] auto [row-1] auto [row-2] auto [row-3] auto;
+      [row-1] auto [row-2] auto [row-3] auto [row-4] auto;
     ;
 
-		@include a($screen-s) {
-			grid-template-columns:
-      [column-1] minmax(33.333%, 480px)  [column-2] minmax(100px, 1fr) [column-3] minmax(100px, 1fr);
-		}
+    @include a($screen-s) {
+      grid-template-columns:
+        [column-1] minmax(33.333%, 480px) [column-2] minmax(100px, 1fr) [column-3] minmax(100px, 1fr);
+    }
+
+    @include a($screen-xs) {
+      padding: 0;
+      grid-template-columns:
+        [column-1] minmax(66.666%, 480px) [column-2] minmax(33.333%, 1fr);
+    }
   }
 
   &__cell {
     padding: 20px;
+
+    @include a($screen-xs) {
+      padding: 10px;
+    }
   }
 
   &__cell-top {
@@ -599,9 +635,9 @@
 
   &__column-1 {
     grid-column: column-1;
-		display: flex;
-		width: 100%;
-		max-width: 480px;
+    display: flex;
+    width: 100%;
+    max-width: 480px;
   }
 
   &__column-2,
@@ -621,6 +657,10 @@
   &__column-3 {
     grid-column: column-3;
     text-align: center;
+
+    @include a($screen-xs) {
+      display: none;
+    }
   }
 
   &__row-1 {
@@ -631,15 +671,21 @@
     grid-row: row-2;
   }
 
-	&__row-3 {
+  &__row-3 {
     grid-row: row-3;
   }
 
-	&__table-body {
-		&.benefits__column-1, &.benefits__column-3 {
-			border-bottom: 1px solid #b5ffe9;
-		}
-	}
+  &__row-4 {
+    grid-row: row-4;
+  }
+
+  &__table-body {
+
+    &.benefits__column-1,
+    &.benefits__column-3 {
+      border-bottom: 1px solid #b5ffe9;
+    }
+  }
 
   // &__table {
   //   width: 100%;
@@ -748,4 +794,764 @@
     }
   }
 
+}
+
+.process {
+  padding: 100px;
+
+  @include a($screen-m) {
+    padding: 80px 0 0;
+  }
+
+  @include a($screen-s) {
+    padding: 40px 0 0;
+  }
+
+  &__inner {}
+
+  &__top {
+    padding-bottom: 150px;
+
+    @include a($screen-s) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+
+    @include a($screen-s) {
+      flex-direction: column;
+      align-items: flex-start;
+
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 97vw;
+      height: 220px;
+      top: -280px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url(../images/process-bg.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom center;
+
+      @include a($screen-s) {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    display: block;
+    width: 100%;
+    max-width: 370px;
+    position: relative;
+
+    @include a($screen-s) {
+      max-width: none;
+    }
+
+    &:not(:last-child) {
+      margin-right: 40px;
+
+      @include a($screen-s) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+
+    &::after {
+      content: '';
+      width: 180px;
+      height: 300px;
+      font-weight: 900;
+      font-size: 300px;
+      line-height: 1;
+      position: absolute;
+      top: 50%;
+      right: -20px;
+      transform: translateY(-50%);
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: -1;
+
+      @include a($screen-m) {
+        display: none;
+      }
+    }
+
+    &--1 {
+      &::after {
+        background-image: url(../images/1.png);
+      }
+    }
+
+    &--2 {
+      margin-bottom: 20px;
+
+      @include a($screen-s) {
+        margin-bottom: 0;
+      }
+
+      &::after {
+        background-image: url(../images/2.png);
+      }
+    }
+
+    &--3 {
+      margin-bottom: 40px;
+
+      @include a($screen-s) {
+        margin-bottom: 0;
+      }
+
+      &::after {
+        background-image: url(../images/3.png);
+      }
+    }
+  }
+
+  &__heading {
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #FFFFFF;
+      box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 25px;
+
+      @include a($screen-s) {
+        display: none;
+      }
+
+    }
+
+    &::after {
+      content: '';
+      width: 36px;
+      height: 36px;
+      position: absolute;
+      top: -180px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      @include a($screen-s) {
+        display: none;
+      }
+    }
+
+    &--1 {
+      &::after {
+        background-image: url(../images/icons/consultation.svg);
+      }
+    }
+
+    &--2 {
+      &::after {
+        background-image: url(../images/icons/therapist.svg);
+      }
+    }
+
+    &--3 {
+      &::after {
+        background-image: url(../images/icons/counseling.svg);
+      }
+    }
+
+  }
+}
+
+.reviews {
+  padding: 100px 0;
+  position: relative;
+
+  @include a($screen-s) {
+    padding: 40px 0;
+  }
+
+  &__buttons {
+    position: absolute;
+    top: 120px;
+    right: 30px;
+    z-index: 2;
+
+    @include a($screen-s) {
+      display: none;
+    }
+  }
+
+  &__buttons-inner {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    padding: 10px;
+    cursor: pointer;
+
+    &:first-child {
+      margin-right: 20px;
+    }
+
+    &:hover {
+
+      .reviews__arrow-left,
+      .reviews__arrow-right {
+        fill: #1db99c;
+      }
+    }
+  }
+
+  &__arrow-left,
+  &__arrow-right {
+    fill: $accent;
+  }
+
+  &__items {}
+
+  &__item {}
+
+  &__inner {
+    display: flex;
+
+    @include a($screen-s) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__video {
+    display: flex;
+    flex: 0 1 50%;
+    justify-content: center;
+    align-items: center;
+    // width: 100%;
+    // max-width: 660px;
+    height: 420px;
+    margin-right: 5vw;
+    border-radius: 22px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    // background-image: url('images/video-bg.jpg');
+    border: 7px solid #F4F4F7;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: filter .3s;
+
+    @include a($screen-s) {
+      flex: 1 0 100%;
+      height: 300px;
+      background-position: top center;
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+
+    @include a($screen-xs) {
+      height: 200px;
+    }
+
+    &:hover {
+      filter: brightness(90%);
+
+      .reviews__video-btn svg {
+        fill: black;
+      }
+    }
+  }
+
+  &__video-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__video-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    z-index: 3;
+
+    @include a($screen-xs) {
+      width: 70px;
+      height: 70px;
+    }
+
+    svg {
+      fill: $accent;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex: 0 1 50%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+    position: relative;
+
+    @include a($screen-s) {
+      flex: 1 0 100%;
+    }
+  }
+
+  &__title {
+    font-size: 45px;
+    line-height: 1;
+    margin-bottom: 40px;
+
+    @include a($screen-m) {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    @include a($screen-xs) {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  &__stars {
+    margin-bottom: 30px;
+  }
+
+}
+
+.faq {
+  padding: 165px 0 80px;
+  background-color: $secondary;
+
+  @include a($screen-m) {
+    padding: 100px 0 80px;
+  }
+
+  @include a($screen-s) {
+    padding: 70px 0;
+  }
+
+  @include a($screen-xs) {
+    padding: 50px 0;
+  }
+
+  &__inner {
+    display: flex;
+
+    @include a($screen-s) {
+      flex-direction: column;
+    }
+  }
+
+  &__header {
+    width: 100%;
+    max-width: 440px;
+    margin-right: 160px;
+
+    @include a($screen-m) {
+      margin-right: 70px;
+    }
+
+    @include a($screen-s) {
+      max-width: none;
+    }
+  }
+
+  &__header-items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__header-item {
+    width: 100%;
+
+    @include a($screen-s) {
+      width: 48%;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    @include a($screen-xs) {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__header-link {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: rgba(#ffffff, 0.7);
+    }
+
+    &--active {
+      background-color: #ffffff;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  &__content-items {}
+
+  &__content-item {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__questions {
+    padding: 30px 0;
+  }
+
+  &__question {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 0;
+    cursor: pointer;
+    position: relative;
+
+    &::after,
+    &::before {
+      content: '';
+      width: 10px;
+      height: 1px;
+      background-color: $primary;
+      position: absolute;
+      top: 10px;
+      transition: transform .3s ease;
+    }
+
+    &::before {
+      transform: rotate(40deg);
+      right: 25px;
+    }
+
+    &::after {
+      transform: rotate(-40deg);
+      right: 18px;
+    }
+
+    &--active {
+      &::before {
+        transform: rotate(-40deg);
+      }
+
+      &::after {
+        transform: rotate(40deg);
+      }
+    }
+
+  }
+
+  &__text {
+    padding-top: 5px;
+    display: none;
+  }
+}
+
+.work {
+  padding: 90px 0;
+
+  @include a($screen-s) {
+    padding: 70px 0;
+  }
+
+  @include a($screen-xs) {
+    padding: 50px 0;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__box {
+    max-width: max-content;
+    padding: 1.8rem 10vw;
+    margin-bottom: 40px;
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.12);
+
+    @include a($screen-xs) {
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 44px;
+    color: $accent;
+
+    @include a($screen-m) {
+      font-size: 36px;
+    }
+
+    @include a($screen-xs) {
+      font-size: 24px;
+    }
+  }
+}
+
+
+.footer {
+  background-color: $header;
+  color: #ffffff;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 50px 0 100px;
+
+		@include a($screen-m) {
+      padding: 50px 0;
+      }
+  }
+
+  &__box {
+    // padding: 20px 0;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+		&:not(:first-child) {
+			margin-top: 60px;
+
+			@include a($screen-xs) {
+        margin-top: 30px;
+      }
+		}
+  }
+
+  &__nav {}
+
+  &__logo {
+    margin-bottom: 30px;
+  }
+
+  &__list {}
+
+  &__item {
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    transition: all .3s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus,
+    &:active,
+    &:visited {
+      color: $secondary;
+    }
+  }
+
+	&__contacts {
+		
+	}
+
+
+  &__socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 150px;
+  }
+
+  &__socials-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    svg {
+      fill: #ffffff;
+    }
+
+    &:hover {
+      svg {
+        fill: $primary;
+      }
+    }
+  }
+
+  &__bottom {
+		display: flex;
+		justify-content: space-between;
+		padding: 30px 0;
+	}
+
+	&__bottom-item {
+		margin-bottom: 20px;
+	}
+
+	&__bottom-link {
+		&:not(:last-child) {
+			position: relative;
+			&::before {
+				content: '';
+				width: 1px;
+				height: 11px;
+				background-color: #ffffff;
+				position: absolute;
+				top: 5px;
+				right: -20px;
+			}
+		}
+		&:last-child {
+			padding-left: 31px;
+		}
+	}
+}
+
+.logo {
+
+  &__img {}
+}
+
+.subscribe-form {
+  margin-bottom: 20px;
+  padding-top: 30px;
+  border-top: 1px solid $primary;
+
+  &__box {
+    display: flex;
+  }
+
+  &__label {
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+
+  &__input {
+    padding: 15px 20px;
+    max-width: 320px;
+    height: 50px;
+    background-color: #ffffff;
+    color: $primary;
+    font-weight: 500;
+    line-height: 1;
+
+    &::placeholder {
+      color: $accent;
+      font-weight: 400;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    background-color: $primary;
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: #1c4274;
+    }
+
+    &:focus,
+    &:active {
+      background-color: #0b5e4e;
+
+      svg {
+        fill: #b5ffe9;
+      }
+    }
+
+    svg {
+      transition: fill .3s;
+      fill: #ffffff;
+    }
+  }
+}
+
+.go-top {
+	width: 20px;
+	height: 20px;
+	animation-name: example;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+	animation-direction: alternate;
+	svg {
+		fill: #ffffff;
+	}
+
+	&:hover {
+		animation-play-state: paused;
+		svg {
+			fill: $primary;
+		}
+	}
+}
+
+@keyframes example {
+  from {
+		transform: translateY(-100%);
+	}
+  to {
+		transform: translateY(0)
+	}
 }

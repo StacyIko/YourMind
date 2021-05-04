@@ -10,7 +10,7 @@
 	<link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body id="body">
 	<div class="wrapper">
 		<div class="content">
 			<svg style="display:none">
@@ -74,7 +74,7 @@
 			<header class="header">
 				<div class="container--big container">
 					<nav class="header__nav">
-						<a class="logo header__logo" href="#">
+						<a class="logo header__logo" href="#body">
 							<img class="logo__img" src="images/icons/logo.svg" alt="logo">
 						</a>
 						<ul class="header__list">
@@ -127,7 +127,7 @@
 									<a class="hero__btn" href="#">
 										<svg class="teen">
 											<use xlink:href='#teen' />
-										</svg> Teen</a>
+										</svg> Teens</a>
 								</div>
 							</div>
 							<div class="hero__box">
@@ -136,7 +136,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="about">
+				<section class="about" id="about">
 					<h2 class="sr-only">About</h2>
 					<div class="about__descr">
 						<div class="container">
@@ -208,45 +208,39 @@
 								<ul class="benefits__items">
 									<li class="benefits__item">
 										<div class="heading">
-											Fast access to a multidisciplinary medical team
+											Fast access to quilified specialists
 										</div>
 										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim facilisis sodales. Integer
-											vehicula nulla felis,
-											id egest egestas.
+											As long as you have internet connection you can book a consultation immedeately any time.
 										</p>
 									</li>
 									<li class="benefits__item">
 										<div class="heading">
-											Fast access to a multidisciplinary medical team
+											Convenience and Affordability
 										</div>
 										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim facilisis sodales. Integer
-											vehicula nulla
-											felis,
-											id egest egestas.
+											Since you will be attending therapy sessions online in the comfort of your own home, you can often
+											schedule your therapy
+											sessions for times that are the most convenient for you.
 										</p>
 									</li>
 									<li class="benefits__item">
 										<div class="heading">
-											Fast access to a multidisciplinary medical team
+											More consistent therapy
 										</div>
 										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim facilisis sodales. Integer
-											vehicula nulla
-											felis,
-											id egest egestas.
+											Online therapy decreases absences due to poor weather conditions or sickness, allowing clients to
+											participate in therapy
+											on a regular basis.
 										</p>
 									</li>
 									<li class="benefits__item">
 										<div class="heading">
-											Fast access to a multidisciplinary medical team
+											Psychological comfort
 										</div>
 										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim facilisis sodales. Integer
-											vehicula nulla
-											felis,
-											id egest egestas.
+											Online therapy can help with eliminating the social stigma related to receiving mental counseling
+											or other therapy.
 										</p>
 									</li>
 								</ul>
@@ -357,6 +351,21 @@
 										benefits__column-3 benefits__row-3">
 											<div class="checkbox"></div>
 										</div>
+
+										<!-- row 4 -->
+										<div class="benefits__cell 
+										benefits__table-body
+										benefits__column-1 benefits__row-4">Immediate help</div>
+										<div class="benefits__cell 
+										benefits__table-body
+										benefits__column-2 benefits__row-4">
+											<div class="checkbox checkbox--checked"></div>
+										</div>
+										<div class="benefits__cell 
+										benefits__table-body
+										benefits__column-3 benefits__row-4">
+											<div class="checkbox"></div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -364,7 +373,369 @@
 					</div>
 				</section>
 
+				<section class="process" id="process">
+					<div class="container">
+						<div class="process__inner">
+							<div class="process__top">
+								<h2 class="suptitle">process</h2>
+								<h3 class="title">Quite simple!</h3>
+							</div>
+							<ul class="process__items">
+								<li class="process__item process__item--1">
+									<h4 class="heading process__heading process__heading--1">Book a Consultation</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim facilisis sodales. Integer
+										vehicula nulla felis,
+										id egest egestas lorem. Integer consequat.</p>
+								</li>
+								<li class="process__item process__item--2">
+									<h4 class="heading process__heading process__heading--2">Contact your therapist</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim facilisis sodales. Integer
+										vehicula nulla felis,
+										id egest egestas lorem. Integer consequat.</p>
+								</li>
+								<li class="process__item process__item--3">
+									<h4 class="heading process__heading process__heading--3">Start your session</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim facilisis sodales. Integer
+										vehicula nulla felis,
+										id egest egestas lorem. Integer consequat.</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<div class="reviews">
+					<div class="reviews__buttons">
+						<div class="container">
+							<div class="reviews__buttons-inner">
+								<button class="reviews__button" id="prev">
+									<svg class="reviews__arrow-left svg-arrow-left-dims">
+										<use xlink:href='images/sprite.svg#arrow-left' />
+									</svg>
+								</button>
+								<button class="reviews__button" id="next">
+									<svg class="reviews__arrow-right svg-arrow-right-dims">
+										<use xlink:href='images/sprite.svg#arrow-right' />
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+					<ul class="reviews__items">
+						<li class="reviews__item">
+							<div class="container">
+								<div class="reviews__inner">
+									<div class="reviews__video" style="background-image: url('images/video-bg-1.jpg');">
+										<span class="sr-only">Video-review</span>
+										<a class="reviews__video-link" href="https://www.youtube.com/watch?v=r3fE6FQT82s" data-fancybox>
+											<div class="reviews__video-btn">
+												<svg class="svg-play-icon-dims">
+													<use xlink:href='images/sprite.svg#play-icon' />
+												</svg>
+												<span class="sr-only">play the video</span>
+											</div>
+										</a>
+									</div>
+									<div class="reviews__content">
+										<h2 class="reviews__title">What our patients say</h2>
+										<div class="reviews__stars" data-rateyo-rating="5"></div>
+										<blockquote class="reviews__text">
+											<p>
+												“It was my first meeting with John, but I felt like he understood immediately what I was going
+												through. I have already scheduled my next meeting with him and look forward to it”
+											</p>
+										</blockquote>
+										<span>Michael, Austin</span>
+									</div>
+
+								</div>
+							</div>
+						</li>
+						<li class="reviews__item">
+							<div class="container">
+								<div class="reviews__inner">
+									<div class="reviews__video" style="background-image: url('images/video-bg-2.jpg');">
+										<span class="sr-only">Video-review</span>
+										<a class="reviews__video-link" href="https://www.youtube.com/watch?v=r3fE6FQT82s" data-fancybox>
+											<div class="reviews__video-btn">
+												<svg class="svg-play-icon-dims">
+													<use xlink:href='images/sprite.svg#play-icon' />
+												</svg>
+												<span class="sr-only">play the video</span>
+											</div>
+										</a>
+									</div>
+									<div class="reviews__content">
+										<h2 class="reviews__title">What our patients say</h2>
+										<div class="reviews__stars" data-rateyo-rating="5">
+										</div>
+										<div class="reviews__text">
+											<blockquote class="reviews__text">
+												<p>
+													“Kate has been a very good listener and has offered me valuable tools to help me with anxiety,
+													trauma, and
+													over thinking. I appreciate her and would recommend her to anyone.”
+												</p>
+											</blockquote>
+											<span>Julia, Texas</span>
+										</div>
+
+									</div>
+								</div>
+						</li>
+
+						<li class="reviews__item">
+							<div class="container">
+								<div class="reviews__inner">
+									<div class="reviews__video" style="background-image: url('images/video-bg-3.jpg');">
+										<span class="sr-only">Video-review</span>
+										<a class="reviews__video-link" href="https://www.youtube.com/watch?v=r3fE6FQT82s" data-fancybox>
+											<div class="reviews__video-btn">
+												<svg class="svg-play-icon-dims">
+													<use xlink:href='images/sprite.svg#play-icon' />
+												</svg>
+												<span class="sr-only">play the video</span>
+											</div>
+										</a>
+									</div>
+									<div class="reviews__content">
+										<h2 class="reviews__title">What our patients say</h2>
+										<div class="reviews__stars" data-rateyo-rating="5">
+										</div>
+										<div class="reviews__text">
+											<blockquote class="reviews__text">
+												<p>
+													“Marianna has been very thoughtful in listening to me. I have taken her advice and it has
+													helped me in many ways. I
+													appreciate talking to her weekly.”
+												</p>
+											</blockquote>
+											<span>Ellen, Kentucky</span>
+										</div>
+									</div>
+								</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Reviews end -->
+				<div class="faq" id="faq">
+					<div class="container">
+						<div class="faq__inner">
+							<div class="faq__header">
+								<h2 class="title">Frequently asked questions</h2>
+								<ul class="faq__header-items">
+									<li class="faq__header-item">
+										<a class="faq__header-link faq__header-link--active heading" href="#tab-1">Patients</a>
+									</li>
+									<li class="faq__header-item">
+										<a class="faq__header-link heading" href="#tab-2">HCPs</a>
+									</li>
+								</ul>
+							</div>
+							<div class="faq__content">
+								<ul class="faq__content-items">
+									<li class="faq__content-item faq__content-item--active" id="tab-1">
+										<ul class="faq__questions">
+											<li class="faq__question">
+												<p class="faq__heading heading faq__heading--active">What is YourMind?
+												</p>
+												<p class="faq__text">YourMind is an online counseling platform where you can get online therapy
+													session tailored to your needs.
+													You can have a session via text messages or video calls privately. Schedule session every day
+													24/7.
+													Your therapist reveals your problems and leads you to solution.
+												</p>
+											</li>
+											<li class="faq__question">
+												<p class="faq__heading heading">How is the session conducted?
+												</p>
+												<p class="faq__text">
+													You can have a session via text messages or video calls privately. Schedule session every day
+													24/7.
+													Your therapist reveals your problems and leads you to solution.
+												</p>
+											</li>
+											<li class="faq__question">
+												<p class="faq__heading heading">What can you help with?
+												</p>
+												<p class="faq__text">
+													We provide you with individual, couples and family therapy session. It's possible to treat
+													mental health issues, depression, panic, anxiety and other issues.
+												</p>
+											</li>
+											<li class="faq__question faq__question--hidden">
+												<p class="faq__heading heading">Who are the counselors?
+												</p>
+												<p class="faq__text">
+													All our counselors have license, experience over 5 years and more, a Masters Degree or a
+													Doctorate Degree in their field. They successfully completed the necessary education, exams,
+													training and practice.
+													<a href="#">Click here</a> to learn more about the counselors.
+												</p>
+											</li>
+											<li class="faq__question faq__question--hidden">
+												<p class="faq__heading heading">How much does it cost?
+												</p>
+												<p class="faq__text">
+													Price per session veries from 50$ to 200$ per week depending on the type of counseling you
+													choose. The first 15-minute consultation is free. Then you can purchase a subscribtion for a
+													month or more.
+												</p>
+											</li>
+											<li class="faq__question faq__question--hidden">
+												<p class="faq__heading heading">How long until I'm matched to a coundelor after signing up?
+												</p>
+												<p class="faq__text">
+													It may take from an hour to a few days depending on the availability of our therapists.
+												</p>
+											</li>
+										</ul>
+										<button class="btn btn-view">View all questions</button>
+									</li>
+
+									<li class="faq__content-item" id="tab-2">
+										<ul class="faq__questions">
+											<li class="faq__question">
+												<p class="faq__heading heading">I'm a licensed counselor. How can I apply for a job?
+												</p>
+												<p class="faq__text">You can apply by clicking <a class="btn-here" href="#">here</a>
+												</p>
+											</li>
+											<li class="faq__question">
+												<p class="faq__heading heading">How is the session conducted?
+												</p>
+												<p class="faq__text">
+													You can have a session via text messages or video calls privately. Schedule session every day
+													24/7.
+													Your therapist reveals your problems and leads you to solution.
+												</p>
+											</li>
+											<li class="faq__question faq__question--hidden">
+												<p class="faq__heading heading">How long until I'm matched to a patient after signing up?
+												</p>
+												<p class="faq__text">
+													It may take from an hour to a few days depending on the availability of our therapists.
+												</p>
+											</li>
+										</ul>
+										<button class="btn btn-view" id="btn-view">View all questions</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- FAQ end -->
+
+				<div class="work">
+					<div class="container">
+						<div class="work__inner">
+							<div class="work__box">
+								<p class="work__text">Are you a therapist?</p>
+							</div>
+							<a class="btn" href="#">Work with us</a>
+						</div>
+					</div>
+				</div>
 			</main>
+
+			<footer class="footer">
+				<div class="container">
+					<div class="footer__top">
+						<div class="footer__box">
+							<nav class="footer__nav">
+								<a class="logo footer__logo" href="#">
+									<img class="logo__img" src="images/icons/logo.svg" alt="logo">
+								</a>
+								<ul class="footer__list">
+									<li class="footer__item">
+										<a class="footer__link" href="#about">About
+										</a>
+									</li>
+									<li class="footer__item">
+										<a class="footer__link" href="#benefits">Benefits
+										</a>
+									</li>
+									<li class="footer__item">
+										<a class="footer__link" href="#process">Process
+										</a>
+									</li>
+									<li class="footer__item">
+										<a class="footer__link" href="#faq">FAQ
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="footer__box">
+							<address class="footer__contacts">
+								<p class="footer__item"><span>Phone:</span>
+									<a class="footer__link" href="tel:+8323475843"> +832-347-5843</a>
+								</p>
+								<p class="footer__item"><span>Fax:</span>
+									<a class="footer__link" href="tel:+8323475843"> +832-347-5843</a>
+								</p>
+								<p class="footer__item">
+									<span>Email:</span> <a class="footer__link" href="mailto:contact@Glee.com">
+										contact@Glee.com</a>
+								</p>
+								<p class="footer__item"><span>ADDRESS:</span> 4772 Wines Lane
+									Houston, TX 77032</p>
+							</address>
+						</div>
+						<div class="footer__box">
+							<form class="subscribe-form">
+								<label for="email" class="subscribe-form__label">
+									Join our newsletter
+								</label>
+								<div class="subscribe-form__box">
+									<input class="subscribe-form__input" id="email" type="email" name="email" placeholder="Email address"
+										required>
+									<button class="subscribe-form__btn" type="submit">
+										<svg class="svg-arrow-right-btn-dims">
+											<use xlink:href='images/sprite.svg#arrow-right-btn' />
+										</svg>
+										<span class="sr-only">Subscribe</span>
+									</button>
+								</div>
+							</form>
+							<div class="footer__socials">
+								<a class="footer__socials-item" href="#">
+									<svg class="svg-twitter-dims">
+										<use xlink:href='images/sprite.svg#twitter' />
+									</svg>
+								</a>
+								<a class="footer__socials-item" href="#">
+									<svg class="svg-facebook-dims">
+										<use xlink:href='images/sprite.svg#facebook' />
+									</svg>
+								</a>
+								<a class="footer__socials-item" href="#">
+									<svg class="svg-linkedin-dims">
+										<use xlink:href='images/sprite.svg#linkedin' />
+									</svg>
+								</a>
+								<a class="footer__socials-item" href="#">
+									<svg class="svg-youtube-dims">
+										<use xlink:href='images/sprite.svg#youtube' />
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="footer__bottom">
+						<div class="footer__bottom-box">
+							<p class="footer__bottom-item">Copyright © 2020</p>
+							<a class="footer__link footer__bottom-link " href="#">Privacy Policy</a>
+							<a class="footer__link footer__bottom-link" href="#">Terms of use</a>
+						</div>
+						<a class="go-top" href="#body">
+							<svg class="svg-arrow-top-dims">
+								<use xlink:href='images/sprite.svg#arrow-top' />
+							</svg>
+						</a>
+					</div>
+				</div>
+			</footer>
 		</div>
 	</div>
 

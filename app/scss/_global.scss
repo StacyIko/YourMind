@@ -1,7 +1,7 @@
 body {
-	@include font('Roboto', 300);
-	color: $primary;
-	font-size: 16px;
+  @include font('Roboto', 300);
+  color: $primary;
+  font-size: 16px;
 }
 
 main {
@@ -30,67 +30,67 @@ main {
     max-width: 1785px;
   }
 
-	&--medium {
-		max-width: 1630px;
-	}
+  &--medium {
+    max-width: 1630px;
+  }
 }
 
 .suptitle {
-	margin-bottom: 20px;
-	font-size: 14px;
-	font-weight: 700;
-	text-transform: uppercase;
-	color: $accent;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $accent;
 
-	@include a($screen-s) {
-		margin-bottom: 10px;
-	}
+  @include a($screen-s) {
+    margin-bottom: 10px;
+  }
 }
 
 .title {
-	font-size: 60px;
-	line-height: 1;
-	margin-bottom: 40px;
+  font-size: 60px;
+  line-height: 1;
+  margin-bottom: 40px;
 
-	@include a($screen-m) {
-		font-size: 45px;
-	}
+  @include a($screen-m) {
+    font-size: 45px;
+  }
 
-	@include a($screen-s) {
-		font-size: 36px;
-		margin-bottom: 30px;
-	}
+  @include a($screen-s) {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
 
-	@include a($screen-xs) {
-		font-size: 30px;
+  @include a($screen-xs) {
+    font-size: 30px;
     margin-bottom: 25px;
-	}
+  }
 }
 
 .heading {
-    margin-bottom: 8px;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
 }
 
 .btn {
-	padding: 0 5px 6px;
-	font-size: 16px;
-	font-weight: 500;
-	border-bottom: 1px solid $hero;
-	transition: color .3s;
+  padding: 0 5px 6px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid $hero;
+  transition: color .3s;
 
-	&:hover {
-		color: $hover;
-	}
+  &:hover {
+    color: $hover;
+  }
 }
 
 .btn-book {
   padding: 19px 30px;
   border: 2px solid #FFD011;
   border-radius: 10px;
-	font-weight: 700;
+  font-weight: 700;
   transition: background .3s;
 
   &:hover {
@@ -100,8 +100,8 @@ main {
   &:focus,
   &:active {
     // background: radial-gradient(100% 100% at 50% 0%, #ffea8d 0%, #FFBE43 100%);
-		border-color: $primary;
-		color: #ebebeb;
+    border-color: $primary;
+    color: #ebebeb;
   }
 
   @include a($screen-m) {
@@ -109,19 +109,19 @@ main {
     z-index: 4;
   }
 
-	@include a($screen-s) {
-		padding: 14px 30px;
-	}
+  @include a($screen-s) {
+    padding: 14px 30px;
+  }
 
-	&--2 {
-		background: radial-gradient($gradient-2);
-		color: #ffffff;
-		border-color: transparent;
+  &--2 {
+    background: radial-gradient($gradient-2);
+    color: #ffffff;
+    border-color: transparent;
 
-		&:hover {
-			background: radial-gradient($gradient-2-hover);
-		}
-	}
+    &:hover {
+      background: radial-gradient($gradient-2-hover);
+    }
+  }
 }
 
 a {
@@ -168,8 +168,8 @@ img {
 }
 
 a,
-button {
-  outline-color: $primary;
+button, input {
+  outline-color: $accent;
   transition: background-color .3s;
   transition: color .3s;
 }
@@ -240,4 +240,28 @@ button {
 
 .header__nav--active .header__list {
   transform: translateY(0);
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+
+
+  li {
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $header;
+		cursor: pointer;
+		transition: background-color .3s;
+
+		&:not(:last-child) {
+			margin-right: 15px;
+		}
+
+		&.slick-active {
+			background-color: $accent;
+		}
+  }
 }
