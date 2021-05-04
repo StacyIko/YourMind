@@ -20,16 +20,12 @@ $(function () {
 	$('#next').on('click', function () {
 		$('.reviews__items').slick('slickNext');
 	});
-	// $('tr').hover(function(){
-	// 	$(this).toggleClass('active');
-	// })
 	$('.benefits__column-2').first().css("border-radius", "10px 10px 0 0");
 	$('.benefits__column-2').last().css("border-radius", "0 0 10px 10px");
 	$('.benefits__column-2').first().css("margin-top", "-10px");
 	$('.benefits__column-2').last().css("margin-bottom", "-10px");
 
   $(".reviews__stars").rateYo({
-		// rating: 3.6,
    	normalFill: "#d6d6d6",
 		ratedFill: "#ffd011",
 		starWidth: "16px",
@@ -60,7 +56,7 @@ $(function () {
   	})
 	})
 
-		// плавный скролл
+		// scroll effects
 	$(".header__nav a, .go-top").on("click", function (event) {
 		event.preventDefault();
 		var id = $(this).attr('href'),
