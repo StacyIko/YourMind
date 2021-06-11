@@ -161,7 +161,7 @@
   background-size: cover;
   background-position: bottom center;
 
-  @include a($screen-s) {
+  @include a($screen-l) {
     min-height: fit-content;
   }
 
